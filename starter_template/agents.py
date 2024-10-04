@@ -1,8 +1,9 @@
 from crewai import Agent
 from textwrap import dedent
-from langchain.llms import OpenAI, Ollama
 from langchain_openai import ChatOpenAI
 
+from tools.search_tools import SearchTools
+from tools.calculator_tools import CalculatorTools
 
 """
 Creating Agents Cheat Sheet:
@@ -32,9 +33,6 @@ Notes:
 """
 
 
-# This is an example of how to define custom agents.
-# You can define as many agents as you want.
-# You can also define custom tasks in tasks.py
 class TravelAgents:
     def __init__(self):
         self.OpenAIGPT35 = ChatOpenAI(
